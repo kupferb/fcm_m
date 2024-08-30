@@ -66,7 +66,7 @@ in_n = size(data, 2);
 
 % Change the following to set default options
 default_options = [2;	% exponent for the partition matrix U
-		100;	% max. number of iteration
+		1;	% max. number of iteration
 		1e-5;	% min. amount of improvement
 		1];	% info display during iteration 
 

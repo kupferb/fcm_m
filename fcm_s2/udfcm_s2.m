@@ -25,7 +25,7 @@ in_n = size(data, 2);
 default_options = [2;	% exponent for the partition matrix U
 		100;	% max. number of iteration
 		1e-5;	% min. amount of improvement
-		1];	% info display during iteration 
+		0];	% info display during iteration 
 
 if nargin == 2,
 	options = default_options;

@@ -1,4 +1,4 @@
-function [center, U, obj_fcn] = fgfcm(data, cluster_n,rg,options)
+function [center, U, obj_fcn] = fgfcm_s2(data, cluster_n,rg,options)
 % Use a 3*3 window
 data1=data;                                 %Preprocess data
 data=[];                                    
@@ -25,7 +25,7 @@ data_n = size(data, 1);
 default_options = [2;	% exponent for the partition matrix U
 		100;	% max. number of iteration
 		1e-5;	% min. amount of improvement
-		1;      % info display during iteration 
+		0;      % info display during iteration 
         3;];	% scale factor
 
 if nargin == 2,
