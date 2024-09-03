@@ -1,8 +1,8 @@
 function [center, U, obj_fcn] = fgfcm_s1(data, cluster_n,rg,options)
 % Use a 3*3 window
-data1=data;                                 %Preprocess data
+data1=double(data);                                 %Preprocess data
 data=[];                                    
-data=reshape(data1,size(data1,1)*size(data1,2),1);
+data=double(reshape(data1,size(data1,1)*size(data1,2),1));
 data2=padmatrix(data1,1);                    %Preprocess data
 % for i=2:size(data1,1)+1,
 %     for j=2:size(data1,2)+1,

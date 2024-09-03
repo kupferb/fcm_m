@@ -96,7 +96,7 @@ function out=lnwi_fun(i,data2,rc,rs,rg)
  [neigh1,neigh2,lc]=neighbor(rc,i);
  sigma=sqrt(sum((data(neigh1)-data(i)).^2)/8);
  S=lsm(data(i),lc,neigh1,neigh2,rs,rg,data,sigma);
- out=S'*data(neigh1)/sum(S);       
+ out=S'*double(data(neigh1))/sum(S);       
  function [out1,out2,out3]=neighbor(rc,i) 
   out1=[];
   out2=[];
@@ -130,9 +130,13 @@ function out=lnwi_fun(i,data2,rc,rs,rg)
   if sigma==0,
     p2=1/rg*ones(8,1);
   else
-    p2=(data(neigh1)-lcv).^2/(rg*sigma^2);
+    p2=(double(data(neigh1))-double(lcv)).^2/(rg*sigma^2);
   end
+  try
   out=exp(-((max(abs(neigh2'))/rs)'+p2));
+  catch
+   stop=true
+  end
 
      
      
